@@ -2,6 +2,7 @@
 
 package br.com.etechoracio.viagem.entity;
 
+import br.com.etechoracio.viagem.enums.CategoriaEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,10 +23,14 @@ public class Gasto {
     private String descricao;
     @Column(name="TX_LOCAL")
     private String local;
+
     @Column(name="TP_CATEGORIA")
-    private String categoria;
+    @Enumerated(EnumType.STRING)
+    private CategoriaEnum tipoCategoria;
+
     @Column(name="DT_GASTO")
     private LocalDate dataGasto;
+
     @Column(name="VLR_GASTO")
     private float gasto;
 
