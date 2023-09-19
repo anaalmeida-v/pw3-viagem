@@ -42,7 +42,7 @@ public class ViagemController {
     public ResponseEntity<Viagem> atualizar(@PathVariable Long id,
                             @RequestBody Viagem obj){
         Optional<Viagem> existe = repository.findById(id);
-        if(existe.isPresent()){
+        if(exste.isPresent()){
             repository.save(obj);
             return ResponseEntity.ok(obj);
         }
