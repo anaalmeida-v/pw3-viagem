@@ -1,3 +1,5 @@
+
+//ANA E KALEB
 package br.com.etechoracio.viagem.entity;
 
 import br.com.etechoracio.viagem.enums.CategoriaEnum;
@@ -17,26 +19,23 @@ public class Gasto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="ID_GASTO")
     private Long id;
-    
     @Column(name="TX_DESCRICAO")
     private String descricao;
-    
     @Column(name="TX_LOCAL")
     private String local;
-    
-    @Enumerated(EnumType.STRING)
+
     @Column(name="TP_CATEGORIA")
-    private CategoriaEnum categoria;
-    
+    @Enumerated(EnumType.STRING)
+    private CategoriaEnum tipoCategoria;
+
     @Column(name="DT_GASTO")
-    private LocalDate data;
-    
+    private LocalDate dataGasto;
+
     @Column(name="VLR_GASTO")
-    private Double valor;
-    
+    private float gasto;
+
     @ManyToOne
     @JoinColumn(name="ID_VIAGEM")
     private Viagem viagem;
-    
-    
+
 }
